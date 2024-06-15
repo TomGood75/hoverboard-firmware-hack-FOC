@@ -165,9 +165,9 @@
 
 // Extra functionality
 // #define STANDSTILL_HOLD_ENABLE          // [-] Flag to hold the position when standtill is reached. Only available and makes sense for VOLTAGE or TORQUE mode.
-#define ELECTRIC_BRAKE_ENABLE           // [-] Flag to enable electric brake and replace the motor "freewheel" with a constant braking when the input torque request is 0. Only available and makes sense for TORQUE mode.
-#define ELECTRIC_BRAKE_MAX    100       // (0, 500) Maximum electric brake to be applied when input torque request is 0 (pedal fully released).
- #define ELECTRIC_BRAKE_THRES  120       // (0, 500) Threshold below at which the electric brake starts engaging.
+//#define ELECTRIC_BRAKE_ENABLE           // [-] Flag to enable electric brake and replace the motor "freewheel" with a constant braking when the input torque request is 0. Only available and makes sense for TORQUE mode.
+//#define ELECTRIC_BRAKE_MAX    100       // (0, 500) Maximum electric brake to be applied when input torque request is 0 (pedal fully released).
+//#define ELECTRIC_BRAKE_THRES  120       // (0, 500) Threshold below at which the electric brake starts engaging.
 // ########################### END OF MOTOR CONTROL ########################
 
 
@@ -250,8 +250,8 @@
 */
 
 // #define DEBUG_SERIAL_USART2          // left sensor board cable, disable if ADC or PPM is used!
-// #define DEBUG_SERIAL_USART3          // right sensor board cable, disable if I2C (nunchuk or lcd) is used!
-// #define DEBUG_SERIAL_PROTOCOL        // uncomment this to send user commands to the board, change parameters and print specific signals (see comms.c for the user commands)
+ #define DEBUG_SERIAL_USART3          // right sensor board cable, disable if I2C (nunchuk or lcd) is used!
+ #define DEBUG_SERIAL_PROTOCOL        // uncomment this to send user commands to the board, change parameters and print specific signals (see comms.c for the user commands)
 // ########################### END OF DEBUG SERIAL ############################
 
 
@@ -545,17 +545,17 @@
       #define MULTI_MODE_DRIVE_M2_MAX   500
       #define MULTI_MODE_DRIVE_M2_RATE  300
       #define MULTI_MODE_M2_I_MOT_MAX   9
-      #define MULTI_MODE_M2_N_MOT_MAX   120
+      #define MULTI_MODE_M2_N_MOT_MAX   160
 
       // ADVANCED MODE:    Power ON + Brake [pressed] + Throttle [pressed]
       // #define MULTI_MODE_DRIVE_M3_MAX   1000
       // #define MULTI_MODE_DRIVE_M3_RATE  450
-      // #define MULTI_MODE_M3_I_MOT_MAX   I_MOT_MAX
-      // #define MULTI_MODE_M3_N_MOT_MAX   N_MOT_MAX
+      // #define MULTI_MODE_M3_I_MOT_MAX   I_MOT_MAX  //15
+      // #define MULTI_MODE_M3_N_MOT_MAX   N_MOT_MAX  //1000
       #define MULTI_MODE_DRIVE_M3_MAX   700
       #define MULTI_MODE_DRIVE_M3_RATE  400
       #define MULTI_MODE_M3_I_MOT_MAX   11
-      #define MULTI_MODE_M3_N_MOT_MAX   150
+      #define MULTI_MODE_M3_N_MOT_MAX   250
   #endif
 
 #endif
